@@ -1,0 +1,88 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+
+/**
+ *
+ * @author iks
+ */
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+public class javaxcontohgui extends JFrame {
+
+    private JPanel pl = new JPanel();
+    private JLabel lbl1 = new JLabel("String I");
+    private JLabel lbl2 = new JLabel("String II");
+    private JLabel lbl3 = new JLabel("HASIL");
+
+    private JTextField t1 = new JTextField();
+    private JTextField t2 = new JTextField();
+    private JTextField t3 = new JTextField();
+
+    private JButton b1 = new JButton("PROSES");
+    private JButton b2 = new JButton("HAPUS");
+
+    public javaxcontohgui() {
+        add(lbl1);
+        add(lbl2);
+        add(lbl3);
+
+        add(t1);
+        add(t2);
+        add(t3);
+
+        add(b1);
+        add(b2);
+        add(pl);
+
+        setTitle("GUI Swing");
+        setBounds(100, 100, 300, 300);
+        lbl1.setBounds(15, 20, 80, 25);
+        lbl2.setBounds(15, 55, 125, 25);
+        lbl3.setBounds(15, 90, 125, 25);
+
+        t1.setBounds(120, 20, 80, 25);
+        t2.setBounds(120, 50, 110, 25);
+        t3.setBounds(120, 80, 150, 25);
+
+        b1.setBounds(15, 190, 100, 25);
+        b2.setBounds(120, 190, 80, 25);
+
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+
+        b1.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                kirimdata();
+            }
+        });
+        b2.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                hapusdata();
+            }
+        });
+    }
+
+    public void hapusdata() {
+        t1.setText("");
+        t2.setText("");
+        t3.setText("");
+
+    }
+
+    public void kirimdata() {
+        // Implementasi logika untuk mengirim data
+        String string1 = t1.getText();
+        String string2 = t2.getText();
+        String hasil = string1 + string2;
+        t3.setText(hasil);
+    }
+
+    public static void main(String[] args) {
+        javaxcontohgui demo = new javaxcontohgui();
+        demo.setVisible(true);
+
+    }
+}
